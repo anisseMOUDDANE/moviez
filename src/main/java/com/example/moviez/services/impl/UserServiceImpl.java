@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String createUser(User user) {
+    public User createUser(User user) {
         return null;
     }
 

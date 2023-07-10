@@ -21,12 +21,11 @@ public class UserController {
     public User findById(@PathVariable("id") String id) {
         return userService.getUserById(id);
     }
-  /*
-    @PostMapping("/movies")
-    public Movie createMovie(@RequestBody Movie movie) {
-        // api
-        return movService.createMovie(movie);
+
+    @PostMapping("/user")
+    public User createUser(@RequestBody User user) {
+        return userService.createUser(user);
     }
 
-   */
+
 }
