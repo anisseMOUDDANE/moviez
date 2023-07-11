@@ -1,22 +1,22 @@
 package com.example.moviez.models;
+import com.example.moviez.models.Message;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Request {
+public class ChatRequest {
+
     private String model;
     private List<Message> messages;
     private int n;
     private double temperature;
 
-    public void ChatRequest(String model, String prompt) {
+    public ChatRequest(String model, String prompt) {
         this.model = model;
 
         this.messages = new ArrayList<>();
         this.messages.add(new Message("user", prompt));
     }
-
-    // getters and setters
 
     public String getModel() {
         return model;

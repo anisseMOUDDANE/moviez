@@ -3,19 +3,31 @@ package com.example.moviez.models;
 import java.util.List;
 import java.util.Map;
 
-public class Response {
+public class ChatResponse {
 
     private List<Choice> choices;
 
-    public Map<Object, Object> getChoices() {
+    public ChatResponse(List<Choice> choices) {
+        this.choices = choices;
     }
 
-    // constructors, getters and setters
+    public List<Choice> getChoices() {
+        return choices;
+    }
+
+    public void setChoices(List<Choice> choices) {
+        this.choices = choices;
+    }
 
     public static class Choice {
 
         private int index;
         private Message message;
+
+        public Choice(int index, Message message) {
+            this.index = index;
+            this.message = message;
+        }
 
         public int getIndex() {
             return index;
@@ -32,6 +44,6 @@ public class Response {
         public void setMessage(Message message) {
             this.message = message;
         }
-// constructors, getters and setters
     }
+
 }

@@ -1,7 +1,7 @@
 package com.example.moviez.rest;
 
-import com.example.moviez.models.Request;
-import com.example.moviez.models.Response;
+import com.example.moviez.models.ChatRequest;
+import com.example.moviez.models.ChatResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,10 +26,10 @@ public class ChatController {
     @GetMapping("/chat")
     public String chat(@RequestParam String prompt) {
         // create a request
-        Request request = new Request(model, prompt);
+        ChatRequest request = new ChatRequest(model, prompt);
 
         // call the API
-        Response response = restTemplate.postForObject(apiUrl, request, Response.class);
+        ChatResponse response = restTemplate.postForObject(apiUrl, request, ChatResponse.class);
 
         if (response == null || response.getChoices() == null || response.getChoices().isEmpty()) {
             return "No response";
