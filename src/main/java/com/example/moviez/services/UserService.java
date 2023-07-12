@@ -3,7 +3,7 @@ package com.example.moviez.services;
 import com.example.moviez.models.User;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 public interface UserService {
 

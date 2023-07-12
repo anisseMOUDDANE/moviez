@@ -1,6 +1,5 @@
 package com.example.moviez.services.impl;
 
-import com.example.moviez.dao.MoviesRepository;
 import com.example.moviez.dao.UserRepository;
 import com.example.moviez.models.Movie;
 import com.example.moviez.models.User;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.example.moviez.services.UserService;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -24,10 +23,9 @@ public class UserServiceImpl implements UserService {
         return userList;
     }
 
-
     @Override
     public User getUserById(String id) {
-        return null;
+        return userRepo.findById(id).orElse(null);
     }
 
     @Override
