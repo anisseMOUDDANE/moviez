@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Set;
 @Service
@@ -29,8 +30,8 @@ public class MoviesServiceImpl implements MoviesService {
     private String openaiApiKey;
 
     @Override
-    public Set<Movie> getAllMovies() {
-        return (Set<Movie>) moviesRepository.findAll();
+    public ArrayList<Movie> getAllMovies() {
+        return (ArrayList<Movie>) moviesRepository.findAll();
     }
 
     @Override

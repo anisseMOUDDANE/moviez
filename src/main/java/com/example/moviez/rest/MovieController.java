@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 @RestController
@@ -20,7 +21,7 @@ public class MovieController {
     public MoviesService movService;
 
     @GetMapping("/movies")
-    public Set<Movie> findAll() {
+    public ArrayList<Movie> findAll() {
         return movService.getAllMovies();
     }
 
