@@ -1,9 +1,6 @@
 package com.example.moviez.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.EnumMap;
@@ -23,7 +20,15 @@ public class User {
 
     private String email;
 
-    private String firstName;
+    private String firstname;
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 
     private Role role;
 
@@ -59,13 +64,7 @@ public class User {
         this.email = email;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     public Role getRole() {
         return role;
