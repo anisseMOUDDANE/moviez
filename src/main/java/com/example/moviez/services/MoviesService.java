@@ -16,4 +16,6 @@ public interface MoviesService {
 
     public void deleteMovie(String id);
 
+    public void addMoviesToDatabase();
+
 }

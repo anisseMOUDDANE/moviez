@@ -25,3 +25,4 @@ public class OpenAIRestTemplateConfig {
         return restTemplate;
     }
 }
+
