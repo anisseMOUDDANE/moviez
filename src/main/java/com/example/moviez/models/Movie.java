@@ -1,12 +1,10 @@
 package com.example.moviez.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,13 +19,14 @@ public class Movie {
 
     private String title;
 
+    @Column(length = 600)
     private String synopsis;
 
     private String mainActor;
 
     private double rating;
 
-    private Date releaseDate;
+    private LocalDate releaseDate;
 
     private String genre;
 
@@ -71,11 +70,11 @@ public class Movie {
         this.rating = rating;
     }
 
-    public Date getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 
